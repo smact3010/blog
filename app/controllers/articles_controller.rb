@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
   # in each controller in the following order:
   # index, show, new, edit, create, update and destroy
 
+  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+
   def index
     @articles = Article.all  
   end
